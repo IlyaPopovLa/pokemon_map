@@ -8,9 +8,11 @@ class Pokemon(models.Model):
         return self.title
 
 class PokemonEntity(models.Model):
-    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name='entities', null=True)
+    pokemon = models.ForeignKey('Pokemon', on_delete=models.CASCADE, related_name='entities', null=True)
     lat = models.FloatField()
     lon = models.FloatField()
+    appeared_at = models.DateTimeField(null=True, blank=True)
+    disappeared_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.pokemon.title} at ({self.lat}, {self.lon})"
