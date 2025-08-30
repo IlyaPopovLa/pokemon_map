@@ -6,3 +6,10 @@ class Pokemon(models.Model):
 
     def __str__(self):
         return self.title
+
+class PokemonEntity(models.Model):
+    lat = models.FloatField()  # широта
+    lon = models.FloatField()  # долгота
+
+    def __str__(self):
+        return f"{self.pokemon.title} at ({self.lat}, {self.lon})"
