@@ -84,6 +84,7 @@ target/
 *.pyc
 __pycache__/
 local_settings.py
+pokemon_entities/pokemons.json
 
 .env
 db.sqlite3
